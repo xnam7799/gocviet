@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer"><meta name="robots" content="noindex">
+<title>Gốc Việt Publisher — sign-in</title><link rel="stylesheet" href="../style.css"></head>
+<body><main>
+<header><div class="seal">Gốc<br>Việt</div><div><h1>Gốc Việt Publisher</h1><div class="muted">Sign-in redirect</div></div></header>
+<p id="msg">This page is only used during the sign-in step of the Gốc Việt Publisher tool on the channel owner's computer. It forwards the one-time sign-in code to the tool running on that computer and stores nothing.</p>
+<p class="muted">Trang này chỉ dùng trong bước đăng nhập của công cụ Gốc Việt Publisher trên máy của chủ kênh: chuyển mã đăng nhập dùng một lần về công cụ trên máy, không lưu gì.</p>
+<p><a href="../privacy.html">Privacy Policy</a> · <a href="../terms.html">Terms of Service</a></p>
+<script>
+(function () {
+  var q = location.search;
+  if (/[?&](code|error)=/.test(q)) {
+    document.getElementById("msg").textContent = "Đang chuyển về công cụ trên máy… / Returning to the tool…";
+    location.replace("http://127.0.0.1:8765/callback" + q);
+  }
+})();
+</script>
+</main></body></html>
